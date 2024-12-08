@@ -2,7 +2,8 @@ import time
 import os
 import random
 from telegram import (Update, Bot, ReplyKeyboardMarkup,
-                      InlineKeyboardButton, InlineKeyboardMarkup)
+                      InlineKeyboardButton, InlineKeyboardMarkup,
+                      ParseMode)
 from telegram.ext import (CommandHandler, Filters,
                           MessageHandler, Updater, ConversationHandler,
                           CallbackContext, CallbackQueryHandler)
@@ -48,7 +49,7 @@ f"""
 * Обратная связь - можете оставить отзыв о боте, предложить улучшения или, если что-то пойдет не так, то опишитн проблемы
 """,
         reply_markup=markup,
-        parse_mode=telegram.ParseMode.MARKDOWN
+        parse_mode=ParseMode.MARKDOWN
     )
     return States.MENU
 
