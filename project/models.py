@@ -3,18 +3,16 @@ import os
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'conflict_solution.settings'
 
+
+
 class Situation(models.Model):
-    name = models.CharField(
-        max_length=30,
-        verbose_name='Краткое название'
-    )
     situation = models.TextField(
         verbose_name="Ситуация"
     )
 
     rivalry = models.CharField(
         max_length=50,
-        verbose_name="Соперничество"
+        verbose_name="Номер соперничества"
     )
     rivalry_answer = models.TextField(
         verbose_name="Ответ на соперничество",
@@ -23,7 +21,7 @@ class Situation(models.Model):
 
     device = models.CharField(
         max_length=50,
-        verbose_name="Приспособление"
+        verbose_name="Номер приспособления"
     )
     device_answer = models.TextField(
         verbose_name="Ответ на приспособление",
@@ -32,7 +30,7 @@ class Situation(models.Model):
 
     avoidance = models.CharField(
         max_length=50,
-        verbose_name="Избегание"
+        verbose_name="Номер избегания"
     )
     avoidance_answer = models.TextField(
         verbose_name="Ответ на избегание",
@@ -41,7 +39,7 @@ class Situation(models.Model):
 
     compromise = models.CharField(
         max_length=50,
-        verbose_name="Компромисс"
+        verbose_name="Номер компромисса"
     )
     compromise_answer = models.TextField(
         verbose_name="Ответ на компромисс",
@@ -50,7 +48,7 @@ class Situation(models.Model):
 
     cooperation = models.CharField(
         max_length=50,
-        verbose_name="Сотрудничество"
+        verbose_name="Номер сотрудничества"
     )
     cooperation_answer = models.TextField(
         verbose_name="Ответ на сотрудничество",
@@ -63,7 +61,9 @@ class Situation(models.Model):
         verbose_name_plural = 'ситуации'
 
     def __str__(self):
-        return f'{self.name}'
+        return f'{self.situation}'
+
+
 
 
 
