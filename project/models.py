@@ -6,6 +6,11 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'conflict_solution.settings'
 
 
 class Situation(models.Model):
+    name = models.CharField(
+        max_length=40,
+        verbose_name='Краткое название'
+    )
+    
     situation = models.TextField(
         verbose_name="Ситуация"
     )
@@ -61,7 +66,7 @@ class Situation(models.Model):
         verbose_name_plural = 'ситуации'
 
     def __str__(self):
-        return f'{self.situation}'
+        return f'{self.name}'
 
 
 
